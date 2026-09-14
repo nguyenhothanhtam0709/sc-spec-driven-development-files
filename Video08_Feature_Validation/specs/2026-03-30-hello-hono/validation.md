@@ -39,6 +39,10 @@ HTTP status must be `200 OK`. Response body must be HTML and must contain:
 
 `tsconfig.json` must contain `"strict": true`.
 
+### 6. Layout subcomponents are split into their own files
+
+`src/components/Header.tsx`, `src/components/Main.tsx`, and `src/components/Footer.tsx` must each exist as a separate file with one component, imported into `src/components/Layout.tsx` — not defined inline inside `Layout.tsx`.
+
 ## Not Required
 
 - No automated tests needed for this phase
