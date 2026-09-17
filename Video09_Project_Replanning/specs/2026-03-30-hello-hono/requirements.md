@@ -7,6 +7,7 @@ Install and configure Hono with a `tsx` dev server. Expose a single `/` route th
 ## Out of Scope
 
 - No shared layout or navigation (Phase 2)
+- No CSS or responsive design — there's no layout to make responsive yet (starts in Phase 2, per the roadmap's cross-cutting responsive requirement)
 - No test framework setup (Vitest deferred to a later phase)
 - No database or additional routes
 - No CI/CD pipeline
