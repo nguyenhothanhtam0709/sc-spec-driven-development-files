@@ -13,6 +13,7 @@ Phases are intentionally small — each one is a shippable slice of work, indepe
 - Server-side JSX layout component (header, nav, main, footer)
 - Basic CSS (custom properties, reset, typography)
 - All routes render inside the shared layout
+- Vitest wired up for validation, with a `test` script in `package.json` (`npm test`); a smoke test covers the layout renders correctly
 
 ## Phase 3 — Agent List
 - SQLite database + first migration (`agents` table)
