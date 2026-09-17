@@ -11,7 +11,7 @@ body {
 }
 
 header {
-  padding: 1rem 2rem;
+  padding: 1rem;
   border-bottom: 1px solid #e5e5e5;
 }
 
@@ -22,14 +22,23 @@ header a {
 }
 
 main {
-  padding: 2rem;
+  padding: 1rem;
   max-width: 60rem;
   margin-inline: auto;
 }
 
 footer {
-  padding: 1rem 2rem;
+  padding: 1rem;
   border-top: 1px solid #e5e5e5;
   font-size: 0.875rem;
   color: #666;
+}
+
+/* Mobile-first: widen breathing room once there's enough viewport for it */
+@media (min-width: 40rem) {
+  header,
+  main,
+  footer {
+    padding-inline: 2rem;
+  }
 }

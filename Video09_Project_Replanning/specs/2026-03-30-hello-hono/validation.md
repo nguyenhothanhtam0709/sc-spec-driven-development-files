@@ -44,3 +44,4 @@ HTTP status must be `200 OK`. Response body must be HTML and must contain:
 - No automated tests needed for this phase
 - No CI pipeline required
 - Browser rendering not checked (curl is sufficient)
+- No responsive design checks — there's no layout or CSS yet (responsive design starts in Phase 2)

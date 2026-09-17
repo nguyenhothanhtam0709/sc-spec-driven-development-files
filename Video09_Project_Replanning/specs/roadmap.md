@@ -2,6 +2,8 @@
 
 Phases are intentionally small — each one is a shippable slice of work, independently reviewable and testable.
 
+**Cross-cutting requirement:** the UI is responsive (mobile-first, works from phone to desktop) starting with Phase 2, when the shared layout is introduced. Every phase that ships markup or CSS must keep it responsive — this isn't deferred to a single later phase.
+
 ---
 
 ## Phase 1 — Hello Hono ✅
@@ -9,47 +11,40 @@ Phases are intentionally small — each one is a shippable slice of work, indepe
 - Single `/` route returning "AgentClinic is open for business"
 - Confirm TypeScript types work end-to-end
 
-## Phase 2 — Base Layout
+## Phase 2 — Base Layout, Agents & Ailments
 - Server-side JSX layout component (header, nav, main, footer)
-- Basic CSS (custom properties, reset, typography)
+- Basic CSS (custom properties, reset, typography), mobile-first and responsive
 - All routes render inside the shared layout
 - Vitest wired up for validation, with a `test` script in `package.json` (`npm test`); a smoke test covers the layout renders correctly
-
-## Phase 3 — Agent List
 - SQLite database + first migration (`agents` table)
 - Seed a handful of fictional agents
 - `/agents` page listing all agents
-
-## Phase 4 — Agent Detail
-- `/agents/:id` page showing a single agent's profile
-- Name, model type, current status, presenting complaints
-
-## Phase 5 — Ailments Catalog
+- `/agents/:id` page showing a single agent's profile (name, model type, current status, presenting complaints)
 - `ailments` table + seed data (e.g., "context-window claustrophobia", "prompt fatigue")
 - `/ailments` list page
 - Link agents to one or more ailments
 
-## Phase 6 — Therapies Catalog
+## Phase 3 — Therapies Catalog
 - `therapies` table + seed data
 - `/therapies` list page
 - Map ailments → recommended therapies
 
-## Phase 7 — Appointment Booking
+## Phase 4 — Appointment Booking
 - `appointments` table (agent, therapist, datetime, status)
 - Form to book an appointment from an agent's detail page
 - Basic validation and confirmation page
 
-## Phase 8 — Staff Dashboard
+## Phase 5 — Staff Dashboard
 - `/dashboard` with summary counts: agents, open appointments, ailments in-flight
 - Simple table views for staff to manage records
 - Mary's dashboard is now real
 
-## Phase 9 — Polish & Accessibility
-- Responsive layout for Steve's modern-browser requirement
+## Phase 6 — Polish & Accessibility
+- Responsive audit across all pages built so far (not the first pass — see the cross-cutting requirement above)
 - Semantic HTML audit
 - Keyboard navigation and focus styles
 
-## Phase 10 — Hardening
+## Phase 7 — Hardening
 - Error pages (404, 500)
 - Input sanitization on all forms
 - Basic logging middleware

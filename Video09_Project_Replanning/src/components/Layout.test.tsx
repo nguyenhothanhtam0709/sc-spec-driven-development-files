@@ -15,4 +15,16 @@ describe("Layout", () => {
     expect(html).toContain("<p>page content</p>");
     expect(html).toMatch(/<footer>.*<\/footer>/s);
   });
+
+  it("sets a responsive viewport meta tag", async () => {
+    const html = await (
+      <Layout>
+        <p>page content</p>
+      </Layout>
+    ).toString();
+
+    expect(html).toContain(
+      '<meta name="viewport" content="width=device-width, initial-scale=1.0"/>',
+    );
+  });
 });
